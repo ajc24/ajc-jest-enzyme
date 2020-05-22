@@ -1,0 +1,36 @@
+{
+  "name": "ajc-jest-enzyme",
+  "version": "1.0.0",
+  "description": "Easy to use jest and enzyme configuration and helper functions designed for testing React projects.",
+  "main": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajc24/ajc-jest-enzyme.git"
+  },
+  "author": "Anthony Cox",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajc24/ajc-jest-enzyme/issues"
+  },
+  "homepage": "https://github.com/ajc24/ajc-jest-enzyme#readme",
+  "scripts": {
+    "build": "babel src --out-dir build",
+    "test-unit": "jest --config=./tests/jest-config/unit.config.js",
+    "test-unit-coverage": "npm run test-unit -- --collectCoverage"
+  },
+  "dependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest": "^26.0.1",
+    "react-test-renderer": "^16.13.1"
+  },
+  "devDependencies": {
+    "ajc-babel-config": "github:ajc24/ajc-babel-config",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "peerDependencies": {
+    "react": ">= 16.13.x",
+    "react-dom": ">= 16.13.x"
+  }
+}
