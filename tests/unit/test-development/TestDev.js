@@ -21,6 +21,7 @@ describe('Test Development Helper Class', () => {
       }
     ]
   };
+  const simpleComponentAsMountHtmlJson = '<div><p>Hello World</p></div>';
   const simpleComponentInHtmlTemplateDefaultTitle = `<!DOCTYPE html><html lang="en"><head><title>${defaultHtmlTemplateTitle}</title></head><body>${simpleComponentAsHtml}</body></html>`;
   const simpleComponentInHtmlTemplate = `<!DOCTYPE html><html lang="en"><head><title>${customHtmlTemplateTitle}</title></head><body>${simpleComponentAsHtml}</body></html>`;
   
@@ -37,6 +38,22 @@ describe('Test Development Helper Class', () => {
 
     it('verifies that the json generated from the React component matches the expected json', () => {
       expect(jsonSnapshot).toStrictEqual(simpleComponentAsJson);
+    });
+  });
+
+  describe('mountHtmlSnapshot() method behaviour', () => {
+    let jsonSnapshot;
+
+    beforeAll(() => {
+      jsonSnapshot = TestDev.mountHtmlSnapshot(<SimpleComponent />);
+    });
+
+    it('verifies that json is generated from the React component as expected', () => {
+      expect(typeof jsonSnapshot).toBe(typeof simpleComponentAsMountHtmlJson);
+    });
+
+    it('verifies that the json generated from the React component matches the expected json', () => {
+      expect(jsonSnapshot).toStrictEqual(simpleComponentAsMountHtmlJson);
     });
   });
 
