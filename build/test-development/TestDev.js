@@ -21,6 +21,18 @@ class TestDev {
     return _reactTestRenderer.default.create(component).toJSON();
   }
   /**
+   * Generates a JSON snapshot for the specified React component
+   * Mounts the component first before retrieving the HTML content for that component
+   * @param {React.Component} component
+   * @returns {JSON}
+   */
+
+
+  static mountHtmlSnapshot(component) {
+    const html = this.mountHtml(component);
+    return _reactTestRenderer.default.create(html).toJSON();
+  }
+  /**
    * Mounts the specified React component using enzyme
    * @param {React.Component} component
    * @returns {ReactWrapper}
