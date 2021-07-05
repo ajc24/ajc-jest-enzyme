@@ -20,9 +20,11 @@
     "test-unit-coverage": "npm run test-unit -- --collectCoverage"
   },
   "dependencies": {
-    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.1",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.2",
     "enzyme": "^3.11.0",
-    "jest": "^26.6.3",
+    "jest": "^27.0.6",
+    "jsdom": "16.6.0",
+    "jsdom-global": "3.0.2",
     "react-test-renderer": "^17.0.2"
   },
   "devDependencies": {
@@ -33,5 +35,8 @@
   "peerDependencies": {
     "react": ">= 17.0.x",
     "react-dom": ">= 17.0.x"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
   }
 }
