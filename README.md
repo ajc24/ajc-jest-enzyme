@@ -148,8 +148,6 @@ const jsonSnapshot = TestDev.createSnapshot(
 );
 ```
 
-[Return to Top](https://github.com/ajc24/ajc-jest-enzyme#testdev-module-functionality)
-
 #### `mountHtmlSnapshot(reactComponent)`:
 
 Accepts a ReactJs component as a parameter. Fully renders the React component using [`enzyme.mount(reactComponent)`](https://enzymejs.github.io/enzyme/docs/api/ReactWrapper/mount.html) in order to preserve the lifecycle functionality of the component. The function then creates the HTML output for the fully rendered component and returns a snapshot of this HTML output as `JSON`.
@@ -167,8 +165,6 @@ const jsonSnapshot = TestDev.mountHtmlSnapshot(
   </React.Fragment>
 );
 ```
-
-[Return to Top](https://github.com/ajc24/ajc-jest-enzyme#testdev-module-functionality)
 
 #### `mount(reactComponent)`:
 
@@ -188,8 +184,6 @@ const jsonSnapshot = TestDev.mount(
 );
 ```
 
-[Return to Top](https://github.com/ajc24/ajc-jest-enzyme#testdev-module-functionality)
-
 #### `mountHtml(reactComponent)`:
 
 Accepts a ReactJs component as a parameter. Fully renders the React component using [`enzyme.mount(reactComponent)`](https://enzymejs.github.io/enzyme/docs/api/ReactWrapper/mount.html) in order to preserve the lifecycle functionality of the component. The function then creates the HTML output for the fully rendered component and returns that HTML output.
@@ -207,8 +201,6 @@ const jsonSnapshot = TestDev.mountHtml(
   </React.Fragment>
 );
 ```
-
-[Return to Top](https://github.com/ajc24/ajc-jest-enzyme#testdev-module-functionality)
 
 #### `mountHtmlTemplate(reactComponent, htmlTitle)`:
 
@@ -234,8 +226,6 @@ const jsonSnapshot = TestDev.mountHtmlTemplate(
 );
 ```
 
-[Return to Top](https://github.com/ajc24/ajc-jest-enzyme#testdev-module-functionality)
-
 #### `shallow(reactComponent)`:
 
 Accepts a ReactJs component as a parameter. Shallow renders the React component using [`enzyme.shallow(reactComponent)`](https://enzymejs.github.io/enzyme/docs/api/ShallowWrapper/shallow.html). Does not preserve the lifecycle functionality of the component.
@@ -254,8 +244,6 @@ const jsonSnapshot = TestDev.shallow(
 );
 ```
 
-[Return to Top](https://github.com/ajc24/ajc-jest-enzyme#testdev-module-functionality)
-
 #### `shallowHtml(reactComponent)`:
 
 Accepts a ReactJs component as a parameter. Shallow renders the React component using [`enzyme.shallow(reactComponent)`](https://enzymejs.github.io/enzyme/docs/api/ShallowWrapper/shallow.html). Does not preserve the lifecycle functionality of the component. The function then creates the HTML output for the fully rendered component and returns that HTML output.
@@ -273,7 +261,5 @@ const jsonSnapshot = TestDev.shallowHtml(
   </React.Fragment>
 );
 ```
-
-[Return to Top](https://github.com/ajc24/ajc-jest-enzyme#testdev-module-functionality)
 
 ---
