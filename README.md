@@ -122,13 +122,13 @@ import { TestDev } from 'ajc-jest-enzyme';
 
 The following functions and functionality are provided as part of the `TestDev` module:
 
-- [`createSnapshot(reactComponent)`]()
-- [`mountHtmlSnapshot(reactComponent)`]()
-- [`mount(reactComponent)`]()
-- [`mountHtml(reactComponent)`]()
-- [`mountHtmlTemplate(reactComponent, htmlTitle)`]()
-- [`shallow(reactComponent)`]()
-- [`shallowHtml(reactComponent)`]()
+- [`createSnapshot(reactComponent)`](https://github.com/ajc24/ajc-jest-enzyme#createsnapshotreactcomponent)
+- [`mountHtmlSnapshot(reactComponent)`](https://github.com/ajc24/ajc-jest-enzyme#mounthtmlsnapshotreactcomponent)
+- [`mount(reactComponent)`](https://github.com/ajc24/ajc-jest-enzyme#mountreactcomponent)
+- [`mountHtml(reactComponent)`](https://github.com/ajc24/ajc-jest-enzyme#mounthtmlreactcomponent)
+- [`mountHtmlTemplate(reactComponent, htmlTitle)`](https://github.com/ajc24/ajc-jest-enzyme#mounthtmltemplatereactcomponent-htmltitle)
+- [`shallow(reactComponent)`](https://github.com/ajc24/ajc-jest-enzyme#shallowreactcomponent)
+- [`shallowHtml(reactComponent)`](https://github.com/ajc24/ajc-jest-enzyme#shallowhtmlreactcomponent)
 
 #### `createSnapshot(reactComponent)`:
 
