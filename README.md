@@ -42,7 +42,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 ## Add the `unit.config.js` file
 
-If you wish to execute ReactJs unit tests which take advantage of the files in this package then you will need to specify a `unit.config.js` file which is located at the path `<rootDir>/tests/jest-config/jest.config.js` in your project workspace.
+If you wish to execute ReactJs unit tests which take advantage of the files in this package then you will need to specify a `unit.config.js` file which is located at the path `<rootDir>/tests/jest-config/unit.config.js` in your project workspace.
 
 Add the following content to that file:
 
@@ -75,6 +75,28 @@ The following directories are automatically ignored during coverage collection s
 - `<rootDir>/tests/unit/coverage`
 
 The coverage statistics are also set to be generated in the `<rootDir>/tests/unit/coverage` directory.
+
+## Add the `snapshots.config.js` file
+
+If you wish to execute ReactJs snapshot tests which take advantage of the files in this package then you will need to specify a `snapshots.config.js` file which is located at the path `<rootDir>/tests/jest-config/snapshots.config.js` in your project workspace.
+
+Add the following content to that file:
+
+```javascript
+const { configureSnapshotTests } = require('ajc-jest-enzyme');
+
+const jestConfig = configureSnapshotTests();
+
+module.exports = jestConfig;
+```
+
+### Default snapshot test path settings
+
+Snapshot test paths are expected to match the following path:
+
+- `<rootDir>/tests/snapshots/**/*.js`
+
+You can specify a custom snapshot test path by setting `jestConfig.testMatch = [ ... your file(s) ... ]` in the content of this file.
 
 ## Add the `document.config.js` file
 
@@ -116,16 +138,11 @@ Use the included `TestDev` module to drive your unit, snapshot and / or integrat
 
 ## Import `TestDev` into your test files
 
-Add the following import statement to the beginning of each of your test files:
-
-```javascript
-import { TestDev } from 'ajc-jest-enzyme';
-```
-
-If you are not using the `document.config.js` file as described [here](https://github.com/ajc24/ajc-jest-enzyme#add-the-documentconfigjs-file) then you will need to manually import `jsdom-global/register` into each individual test file in your project by using the following import statement at the beginning of each of your test files:
+Add the following import statements to the beginning of each of your test files:
 
 ```javascript
 import 'jsdom-global/register';
+import { TestDev } from 'ajc-jest-enzyme';
 ```
 
 ## `TestDev` module functionality
