@@ -124,7 +124,7 @@ global.document.elementFromPoint = () => {};
 Element.prototype.scrollIntoView = () => {};
 ```
 
-Open the `unit.config.js` file that you have created from the [previous step](https://github.com/ajc24/ajc-jest-enzyme#add-the-unitconfigjs-file) in this documentation and add the following line to that file:
+Open the `unit.config.js` file that you created in a [previous step](https://github.com/ajc24/ajc-jest-enzyme#add-the-unitconfigjs-file) in this documentation and add the following line to that file:
 
 ```javascript
 jestConfig.setupFilesAfterEnv.push('<rootDir>/tests/jest-config/document.config.js');
