@@ -1,5 +1,5 @@
 # ajc-jest-enzyme
-Work in progress (21/05/2020)
+Work in progress (06/07/2021)
 
 An easy to import and use test framework module designed for use with JavaScript and ReactJs projects.
 
@@ -23,7 +23,7 @@ Add the following entry to the `dependencies` or `devDependencies` section of yo
 
 ---
 
-# Adding Jest Configuration Files
+# Add Jest Configuration Files
 
 Create a `<rootDir>/tests/jest-config` folder in your project workspace.
 
