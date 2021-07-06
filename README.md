@@ -25,9 +25,41 @@ Add the following entry to the `dependencies` or `devDependencies` section of yo
 
 # Adding Jest Configuration Files
 
-Create a `tests/jest-config` folder in your project workspace.
+Create a `<rootDir>/tests/jest-config` folder in your project workspace.
 
-## Adding the `document.config.js` file
+## Add the `enzyme.config.js` file
+
+Create a file called `enzyme.config.js` which is located at the path `<rootDir>/tests/jest-config/enzyme.config.js` in your project workspace.
+
+Add the following content to that file:
+
+```javascript
+import Enzyme from 'enzyme';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+ 
+Enzyme.configure({ adapter: new Adapter() });
+```
+
+## Add the `unit.config.js` file
+
+If you wish to execute ReactJs unit tests which take advantage of the files in this package then you will need to specify a `unit.config.js` file which is located at the path `<rootDir>/tests/jest-config/jest.config.js` in your project workspace.
+
+Add the following content to that file:
+
+```javascript
+const { configureUnitTests } = require('ajc-jest-enzyme');
+
+const jestConfig = configureUnitTests();
+
+/* Add custom settings for your project if you wish */
+jestConfig.setupFilesAfterEnv.push('<rootDir>/tests/jest-config/document.config.js');
+jestConfig.coveragePathIgnorePatterns.push('<rootDir>/path-to/my-file-to/ignore.js');
+jestConfig.maxConcurrency = 1;
+
+module.exports = jestConfig;
+```
+
+## Add the `document.config.js` file
 
 Create a file called `document.config.js` which is located at the path `<rootDir>/tests/jest-config/document.config.js` in your project workspace.
 
@@ -53,39 +85,13 @@ global.document.elementFromPoint = () => {};
 Element.prototype.scrollIntoView = () => {};
 ```
 
----
-
-## Adding the `enzyme.config.js` file
-
-Create a file called `enzyme.config.js` which is located at the path `<rootDir>/tests/jest-config/enzyme.config.js` in your project workspace.
-
-Add the following content to that file:
+Open the `unit.config.js` file that you have created from the [previous step](https://github.com/ajc24/ajc-jest-enzyme#add-the-unitconfigjs-file) in this documentation and add the following line to that file:
 
 ```javascript
-import Enzyme from 'enzyme';
-import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
- 
-Enzyme.configure({ adapter: new Adapter() });
-```
-
-## Adding the `unit.config.js` file
-
-If you wish to execute ReactJs unit tests which take advantage of the files in this package then you will need to specify a `unit.config.js` file which is located at the path `<rootDir>/tests/jest-config/jest.config.js` in your project workspace.
-
-Add the following content to that file:
-
-```javascript
-const { configureUnitTests } = require('ajc-jest-enzyme');
-
-const jestConfig = configureUnitTests();
-
-/* Add custom settings for your project if you wish */
 jestConfig.setupFilesAfterEnv.push('<rootDir>/tests/jest-config/document.config.js');
-jestConfig.coveragePathIgnorePatterns.push('<rootDir>/path-to/my-file-to/ignore.js');
-jestConfig.maxConcurrency = 1;
-
-module.exports = jestConfig;
 ```
+
+---
 
 ### Default unit test path settings
 
@@ -118,7 +124,7 @@ Add the following import statement to the beginning of each of your test files:
 import { TestDev } from 'ajc-jest-enzyme';
 ```
 
-If you are not using the `document.config.js` file as described [here](https://github.com/ajc24/ajc-jest-enzyme#adding-the-documentconfigjs-file) then you will need to manually import `jsdom-global/register` into each individual test file in your project by using you the following import statement at the beginning of each of your test files:
+If you are not using the `document.config.js` file as described [here](https://github.com/ajc24/ajc-jest-enzyme#add-the-documentconfigjs-file) then you will need to manually import `jsdom-global/register` into each individual test file in your project by using the following import statement at the beginning of each of your test files:
 
 ```javascript
 import 'jsdom-global/register';
