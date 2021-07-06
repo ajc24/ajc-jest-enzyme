@@ -59,6 +59,23 @@ jestConfig.maxConcurrency = 1;
 module.exports = jestConfig;
 ```
 
+### Default unit test path settings
+
+Unit test paths are expected to match the following path:
+
+- `<rootDir>/tests/unit/**/*.js`
+
+You can specify a custom unit test path by setting `jestConfig.testMatch = [ ... your file(s) ... ]` in the content of this file.
+
+### Default coverage ignored paths
+
+The following directories are automatically ignored during coverage collection statistics:
+
+- `<rootDir>/node_modules`
+- `<rootDir>/tests/unit/coverage`
+
+The coverage statistics are also set to be generated in the `<rootDir>/tests/unit/coverage` directory.
+
 ## Add the `document.config.js` file
 
 Create a file called `document.config.js` which is located at the path `<rootDir>/tests/jest-config/document.config.js` in your project workspace.
@@ -90,25 +107,6 @@ Open the `unit.config.js` file that you have created from the [previous step](ht
 ```javascript
 jestConfig.setupFilesAfterEnv.push('<rootDir>/tests/jest-config/document.config.js');
 ```
-
----
-
-### Default unit test path settings
-
-Unit test paths are expected to match the following path:
-
-- `<rootDir>/tests/unit/**/*.js`
-
-You can specify a custom unit test path by setting `jestConfig.testMatch = [ ... your file(s) ... ]` in the content of this file.
-
-### Default coverage ignored paths
-
-The following directories are automatically ignored during coverage collection statistics:
-
-- `<rootDir>/node_modules`
-- `<rootDir>/tests/unit/coverage`
-
-The coverage statistics are also set to be generated in the `<rootDir>/tests/unit/coverage` directory.
 
 ---
 
