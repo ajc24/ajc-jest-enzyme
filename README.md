@@ -42,7 +42,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 ## Add the `unit.config.js` file
 
-If you wish to execute ReactJs unit tests which take advantage of the files in this package then you will need to specify a `unit.config.js` file which is located at the path `<rootDir>/tests/jest-config/unit.config.js` in your project workspace.
+If you wish to execute ReactJs unit tests which take advantage of the files in this package, you can specify a `unit.config.js` file which is located at the path `<rootDir>/tests/jest-config/unit.config.js` in your project workspace.
 
 Add the following content to that file:
 
@@ -63,22 +63,26 @@ module.exports = jestConfig;
 
 Unit test paths are expected to match the following path:
 
-- `<rootDir>/tests/unit/**/*.js`
+```
+<rootDir>/tests/unit/**/*.js
+```
 
 You can specify a custom unit test path by setting `jestConfig.testMatch = [ ... your file(s) ... ]` in the content of this file.
+
+Unit test coverage statistics are also set to be generated in the `<rootDir>/tests/unit/coverage` directory.
 
 ### Default coverage ignored paths
 
 The following directories are automatically ignored during coverage collection statistics:
 
-- `<rootDir>/node_modules`
-- `<rootDir>/tests/unit/coverage`
-
-The coverage statistics are also set to be generated in the `<rootDir>/tests/unit/coverage` directory.
+```
+<rootDir>/node_modules
+<rootDir>/tests/unit/coverage
+```
 
 ## Add the `snapshots.config.js` file
 
-If you wish to execute ReactJs snapshot tests which take advantage of the files in this package then you will need to specify a `snapshots.config.js` file which is located at the path `<rootDir>/tests/jest-config/snapshots.config.js` in your project workspace.
+If you wish to execute ReactJs snapshot tests which take advantage of the files in this package, you can specify a `snapshots.config.js` file which is located at the path `<rootDir>/tests/jest-config/snapshots.config.js` in your project workspace.
 
 Add the following content to that file:
 
@@ -94,7 +98,9 @@ module.exports = jestConfig;
 
 Snapshot test paths are expected to match the following path:
 
-- `<rootDir>/tests/snapshots/**/*.js`
+```
+<rootDir>/tests/snapshots/**/*.js
+```
 
 You can specify a custom snapshot test path by setting `jestConfig.testMatch = [ ... your file(s) ... ]` in the content of this file.
 
