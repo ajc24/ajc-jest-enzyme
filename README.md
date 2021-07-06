@@ -34,6 +34,8 @@ Create a file called `document.config.js` which is located at the path `<rootDir
 Add the following content to that file:
 
 ```javascript
+import 'jsdom-global/register';
+
 /* Ensure that all relevant functionality is present for document interactions */
 global.document.createRange = () => ({
   getClientRects: () => [],
@@ -110,11 +112,9 @@ Use the included `TestDev` module to drive your unit, snapshot and / or integrat
 
 ### Import `TestDev` into your test files
 
-Add the following import statements to the beginning of each of your test files:
+Add the following import statement to the beginning of each of your test files:
 
 ```javascript
-import 'jsdom-global/register';
-import React from 'react';
 import { TestDev } from 'ajc-jest-enzyme';
 ```
 
@@ -159,7 +159,7 @@ const MyComponent = () => {
   <div><p>Hello World</p></div>
 }
 
-const jsonSnapshot = TestDev.mountHtmlSnapshot(
+const htmlSnapshot = TestDev.mountHtmlSnapshot(
   <React.Fragment>
     <MyComponent />
   </React.Fragment>
@@ -177,7 +177,7 @@ const MyComponent = () => {
   <div><p>Hello World</p></div>
 }
 
-const jsonSnapshot = TestDev.mount(
+const wrapper = TestDev.mount(
   <React.Fragment>
     <MyComponent />
   </React.Fragment>
@@ -195,7 +195,7 @@ const MyComponent = () => {
   <div><p>Hello World</p></div>
 }
 
-const jsonSnapshot = TestDev.mountHtml(
+const wrapperHtml = TestDev.mountHtml(
   <React.Fragment>
     <MyComponent />
   </React.Fragment>
@@ -218,7 +218,7 @@ const MyComponent = () => {
   <div><p>Hello World</p></div>
 }
 
-const jsonSnapshot = TestDev.mountHtmlTemplate(
+const htmlTemplate = TestDev.mountHtmlTemplate(
   <React.Fragment>
     <MyComponent />
   </React.Fragment>,
@@ -237,7 +237,7 @@ const MyComponent = () => {
   <div><p>Hello World</p></div>
 }
 
-const jsonSnapshot = TestDev.shallow(
+const shallowWrapper = TestDev.shallow(
   <React.Fragment>
     <MyComponent />
   </React.Fragment>
@@ -255,7 +255,7 @@ const MyComponent = () => {
   <div><p>Hello World</p></div>
 }
 
-const jsonSnapshot = TestDev.shallowHtml(
+const shallowWrapperHtml = TestDev.shallowHtml(
   <React.Fragment>
     <MyComponent />
   </React.Fragment>
