@@ -138,6 +138,32 @@ jestConfig.setupFilesAfterEnv.push('<rootDir>/tests/jest-config/document.config.
 
 ---
 
+# Add CSS and Image Mock Files
+
+Create a `<rootDir>/tests/jest-config/mocks` folder in your project workspace.
+
+## Add the `cssMock.js` file
+
+Create a file called `cssMock.js` which is located at the path `<rootDir>/tests/jest-config/mocks/cssMock.js` in your project workspace.
+
+Add the following content to that file:
+
+```javascript
+module.exports = {};
+```
+
+## Add the `imageMock.js` file
+
+Create a file called `imageMock.js` which is located at the path `<rootDir>/tests/jest-config/mocks/imageMock.js` in your project workspace.
+
+Add the following content to that file:
+
+```javascript
+module.exports = {};
+```
+
+---
+
 # The `TestDev` module
 
 Use the included `TestDev` module to drive your unit, snapshot and / or integration tests. This module invokes APIs from [`enzyme`](https://enzymejs.github.io/enzyme/) and [`react-test-renderer`](https://reactjs.org/docs/test-renderer.html) in order to support this wide range of testing types.
